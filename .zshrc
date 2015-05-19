@@ -30,6 +30,3 @@ PROMPT='[%F{magenta}%B%n%b%f@%F{blue}%U%m%u%f]# '
 RPROMPT='[%F{green}%d%f]'
 
 # End of lines added by compinstall
-xmodmap ~/.Xmodmap
-PATH=$PATH:/home/jp3bgy/android-sdk-linux/tools:/home/jp3bgy/idea-IC-139.225.3/bin:/home/jp3bgy/.gem/ruby/2.1.0/bin
-export PATH
