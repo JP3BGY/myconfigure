@@ -48,3 +48,6 @@ repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
+
+[[plugins]]
+repo  =  'itchyny/vim-haskell-indent'

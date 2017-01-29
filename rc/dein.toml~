@@ -35,6 +35,9 @@ repo = 'elzr/vim-json'
 repo = 'hynek/vim-python-pep8-indent'
 
 [[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
 repo = 'rcmdnk/vim-markdown'
 
 [[plugins]]

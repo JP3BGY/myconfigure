@@ -250,3 +250,49 @@ on_cmd = ['VimShell', 'VS']
 hook_source = '''
 command VS VimShell
 '''
+[[plugins]]
+repo = 'ujihisa/unite-haskellimport'
+on_ft = ['haskell']
+
+[[plugins]]
+repo = 'itchyny/vim-haskell-sort-import'
+on_ft = ['haskell']
+
+[[plugins]]
+repo  =  'eagletmt/ghcmod-vim'
+on_ft  =  ['haskell']
+
+[[plugins]]
+repo = 'urso/haskell_syntax.vim'
+on_ft = ['haskell']
+
+[[plugins]]
+repo  =  'thinca/vim-quickrun'
+on_cmd  =  ['QuickRun',  'QR']
+hook_source  =  '''
+command QR QuickRun
+'''
+
+[[plugins]]
+repo  =  'osyo-manga/shabadou.vim'
+depends  =  'vim-quickrun.vim'
+on_source  =  'vim-quickrun.vim'
+
+[[plugins]]
+repo  =  'jceb/vim-hier'
+on_source  =  'vim-watchdogs.vim'
+
+[[plugins]]
+repo  =  'dannyob/quickfixstatus'
+on_source  =  'vim-watchdogs.vim'
+
+[[plugins]]
+repo  =  'osyo-manga/vim-watchdogs'
+
+[[plugins]]
+repo  =  'thinca/vim-ref'
+
+[[plugins]]
+repo  =  'ujihisa/ref-hoogle'
+depends = 'vim-ref'
+on_ft  =  ['haskell']
