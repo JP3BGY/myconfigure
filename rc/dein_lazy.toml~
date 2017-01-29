@@ -263,10 +263,6 @@ repo  =  'eagletmt/ghcmod-vim'
 on_ft  =  ['haskell']
 
 [[plugins]]
-repo  =  'itchyny/vim-haskell-indent'
-on_ft  =  ['haskell']
-
-[[plugins]]
 repo = 'urso/haskell_syntax.vim'
 on_ft = ['haskell']
 
