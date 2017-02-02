@@ -329,3 +329,9 @@ repo = 'thinca/vim-ref'
 repo = 'ujihisa/ref-hoogle'
 depends = 'vim-ref'
 on_ft = ['haskell']
+
+[[plugins]]
+repo = 'SirVer/ultisnips'
+hook_source = '''
+
+'''
