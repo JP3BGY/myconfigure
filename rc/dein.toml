@@ -14,12 +14,6 @@ repo = 'itchyny/landscape.vim'
 repo = 'w0ng/vim-hybrid'
 
 [[plugins]]
-repo = 'itchyny/vim-haskell-indent'
-
-[[plugins]]
-repo = 'kana/vim-filetype-haskell'
-
-[[plugins]]
 repo = 'vim-jp/cpp-vim'
 
 [[plugins]]
@@ -50,4 +44,9 @@ repo = 'vim-jp/vimdoc-ja'
 repo = 'hail2u/vim-css3-syntax'
 
 [[plugins]]
-repo  =  'itchyny/vim-haskell-indent'
+repo = 'thinca/vim-themis'
+
+[[plugins]]
+repo = 'itchyny/vim-haskell-indent'
+rtp = './'
+

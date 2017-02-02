@@ -216,10 +216,13 @@ hook_source = '''
     autocmd FileType haskell,int-ghci
           \ inoremap <buffer> <expr> + smartchr#loop('+', ' ++ ')
           \| inoremap <buffer> <expr> - smartchr#loop('-', ' -> ', ' <- ')
-          \| inoremap <buffer> <expr> $ smartchr#loop(' $ ', '$')
+          \| inoremap <buffer> <expr> > smartchr#loop(' > ', ' >>= ', ' >> ', ' >=> ', '>')
+          \| inoremap <buffer> <expr> < smartchr#loop(' < ', ' =<< ', ' >=> ', '<')
+          \| inoremap <buffer> <expr> $ smartchr#loop(' $ ', ' <$> ', '$')
+          \| inoremap <buffer> <expr> * smartchr#loop(' * ', ' <*> ', '*')
           \| inoremap <buffer> <expr> \ smartchr#loop('\ ', '\')
           \| inoremap <buffer> <expr> : smartchr#loop(':', ' :: ', ' : ')
-          \| inoremap <buffer> <expr> . smartchr#loop('.', ' . ', '..')
+          \| inoremap <buffer> <expr> . smartchr#loop(' . ', ' .. ', '.', '..')
   augroup END
 '''
 
@@ -259,40 +262,54 @@ repo = 'itchyny/vim-haskell-sort-import'
 on_ft = ['haskell']
 
 [[plugins]]
-repo  =  'eagletmt/ghcmod-vim'
-on_ft  =  ['haskell']
+repo = 'eagletmt/ghcmod-vim'
+on_ft = ['haskell']
 
 [[plugins]]
 repo = 'urso/haskell_syntax.vim'
 on_ft = ['haskell']
 
 [[plugins]]
-repo  =  'thinca/vim-quickrun'
-on_cmd  =  ['QuickRun',  'QR']
-hook_source  =  '''
+repo = 'itchyny/vim-haskell-indent'
+rtp = 'vim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+on_cmd = ['QuickRun',  'QR']
+hook_source = '''
 command QR QuickRun
+let g:quickrun_config = {
+\   "_":{
+\       "outputter/buffer/split": ":rightbelow vsplit ",
+\   },
+\   "haskell":{'type':'haskell/runghc'},
+\   "haskell/runghc":{
+\       'command': 'stack',
+\       'exec': ['%c runghc -- %o %s %a'],
+\   },
+\}
 '''
 
 [[plugins]]
-repo  =  'osyo-manga/shabadou.vim'
-depends  =  'vim-quickrun.vim'
-on_source  =  'vim-quickrun.vim'
+repo = 'osyo-manga/shabadou.vim'
+depends = 'vim-quickrun.vim'
+on_source = 'vim-quickrun.vim'
 
 [[plugins]]
-repo  =  'jceb/vim-hier'
-on_source  =  'vim-watchdogs.vim'
+repo = 'jceb/vim-hier'
+on_source = 'vim-watchdogs.vim'
 
 [[plugins]]
-repo  =  'dannyob/quickfixstatus'
-on_source  =  'vim-watchdogs.vim'
+repo = 'dannyob/quickfixstatus'
+on_source = 'vim-watchdogs.vim'
 
 [[plugins]]
-repo  =  'osyo-manga/vim-watchdogs'
+repo = 'osyo-manga/vim-watchdogs'
 
 [[plugins]]
-repo  =  'thinca/vim-ref'
+repo = 'thinca/vim-ref'
 
 [[plugins]]
-repo  =  'ujihisa/ref-hoogle'
+repo = 'ujihisa/ref-hoogle'
 depends = 'vim-ref'
-on_ft  =  ['haskell']
+on_ft = ['haskell']

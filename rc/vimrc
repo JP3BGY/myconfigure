@@ -1,4 +1,8 @@
+scriptencoding utf-8
 let s:is_windows = has('win32') || has('win64')
+
+filetype indent plugin on
+autocmd FileType haskell filetype indent plugin on
 
 function! IsWindows() abort
   return s:is_windows
@@ -43,4 +47,4 @@ call dein#call_hook('post_source')
 
 syntax enable
 filetype plugin indent on
-set runtimepath^=$VIM,
+set runtimepath^=$VIM,$VIM\repos\github.com\itchyny\vim-haskell-indent,

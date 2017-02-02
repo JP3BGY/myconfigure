@@ -4,9 +4,9 @@ let g:neocomplete#auto_complete_delay = 30
 
 let g:neocomplete#enable_fuzzy_completion = 1
 
-let g:neocomplete#auto_completion_start_length = 4
+let g:neocomplete#auto_completion_start_length = 1
 let g:neocomplete#manual_completion_start_length = 0
-let g:neocomplete#min_keyword_length = 3
+let g:neocomplete#min_keyword_length = 2
 
 let g:neocomplete#enable_auto_select = 0
 let g:neoinclude#disable_auto_complete = 0
