@@ -1,3 +1,4 @@
+scriptencoding utf-8
 set rop=type:directx
 set guifont=MigMix_2M:h12
 set columns=100
@@ -5,4 +6,4 @@ set background=dark
 colorscheme hybrid
 set cmdheight=1
 set laststatus=2
-set lsp=-3
+set lsp=-1
