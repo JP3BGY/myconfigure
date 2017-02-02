@@ -1,6 +1,6 @@
 scriptencoding utf-8
 set number
-set fileencodings=utf-8,iso-2022-jp,sjis,euc-jp,sjis
+set fileencodings=guess,utf-8,iso-2022-jp-3,sjis,euc-jisx0213,euc-jp,sjis
 set fileformats=unix,dos,mac
 set cmdheight=1
 set lsp=-3
