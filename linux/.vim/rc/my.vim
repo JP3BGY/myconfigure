@@ -1,6 +1,6 @@
 set number
 set enc=utf-8
-set fileencodings=iso-2022-jp,euc-jp,utf-8,sjis
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 set cmdheight=1
 set lsp=-3

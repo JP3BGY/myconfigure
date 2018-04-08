@@ -48,3 +48,7 @@ repo = 'hail2u/vim-css3-syntax'
 
 [[plugins]]
 repo = 'thinca/vim-themis'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+

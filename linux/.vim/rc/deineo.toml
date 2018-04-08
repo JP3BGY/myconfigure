@@ -2,7 +2,7 @@
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 if = "has('nvim')"
-on_ft = ['vim', 'haskell', 'toml']
+on_ft = ['vim', 'haskell', 'toml', 'c', 'cpp']
 hook_source = '''
 let g:deoplete#enable_at_startup = 1
 source ~/.vim/rc/plugins/deoplete.rc.vim
