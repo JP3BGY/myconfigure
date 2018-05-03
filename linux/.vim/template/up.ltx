@@ -1,0 +1,28 @@
+% 文字コードはUTF-8にする
+\documentclass[uplatex,b5j]{jsarticle} % uplatexオプションを入れる
+%\documentclass[b5j]{ujarticle}        % jarticle系にしたい場合はこっち
+\usepackage{amsthm}
+\usepackage[]{amssymb}
+\usepackage[ampersand]{easylist}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage[scale=.8]{geometry}      % ページレイアウトを変更してみる
+\usepackage[T1]{fontenc}             % T1エンコーディングにしてみる
+\usepackage{txfonts}                 % 欧文フォントを変えてみる
+\usepackage{plext}                   % pLaTeX付属の縦書き支援パッケージ
+\usepackage{okumacro}                % jsclassesに同梱のパッケージ
+\usepackage{bm}
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}
+\newtheorem*{theorem*}{定理}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem*{definition*}{定義}
+\makeatletter
+\renewcommand{\theequation}{\arabic{chapter}-\arabic{section}-\arabic{equation}}
+\@addtoreset{equation}{section}
+\makeatother
+\begin{document}
+\title{}
+\author{}
+
+\end{document}

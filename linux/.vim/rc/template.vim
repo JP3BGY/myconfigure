@@ -3,4 +3,6 @@ augroup load_templates
     let s:load_templates_dir='~/.vim/template/'
     let s:load_templates_command="0read ".s:load_templates_dir
     autocmd BufNewFile *.pro.cpp execute s:load_templates_command."pro.cpp"
+    autocmd BufNewFile *.gcj.cpp execute s:load_templates_command."gcj.cpp"
+    autocmd BufNewFile *.ltx execute s:load_templates_command."up.ltx"
 augroup END

@@ -6,14 +6,6 @@ on_if = '!has("nvim")'
 on_ft = ['c', 'cpp', 'objc', 'objcpp']
 
 [[plugins]]
-repo = 'Valloric/YouCompleteMe'
-on_ft = ['c', 'cpp', 'cs', 'python', 'go', 'javascript', 'typescript', 'rust']
-hook_source = '''
-let g:ycm_global_ycm_extra_conf = '~/.vim/repos/github.com/Valloric/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_python_binary_path = '/usr/bin/python3'
-'''
-
-[[plugins]]
 repo = 'Shougo/vimshell.vim'
 on_cmd = ['VimShell', 'VS']
 hook_source = '''

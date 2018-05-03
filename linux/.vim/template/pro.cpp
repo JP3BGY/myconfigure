@@ -5,11 +5,7 @@
 #define REV(i, a, b) for(int i = b-1;i >= a;i--)
 #define Rev(i, a) REV(i, 0, a)
 #define REP(a) For(i, a)
-#ifdef DEBUG
-#define DEBUG_PRINT(...) printf(__VA_ARGS__)
-#else
-#define DEBUG_PRINT(...)
-#endif
+#define DEBUG_PRINT(...) fprintf(stderr, __VA_ARGS__)
 
 using namespace std;
 typedef long long ll;

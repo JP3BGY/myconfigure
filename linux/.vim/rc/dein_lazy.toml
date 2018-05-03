@@ -15,9 +15,8 @@ hook_source = '''
   xmap <silent><C-l>     <Plug>(neosnippet_expand_target)
   let g:neosnippet#enable_snipmate_compatibility = 1
   let g:neosnippet#enable_completed_snippet = 1
-  let g:neosnippet#expand_word_boundary = 1
   " let g:snippets_dir = '~/.vim/snippets/,~/.vim/bundle/snipmate/snippets/'
-  let g:neosnippet#snippets_directory = '~/.vim/snippets'
+  let g:neosnippet#snippets_directory = '~/.vim/neosnippets'
 '''
 
 [[plugins]]
@@ -313,3 +312,51 @@ on_ft = ['python', 'python3', 'python2']
 hook_source = '''
 let g:deoplete#sources#jedi#show_docstring = 1
 '''
+
+[[plugins]]
+repo = 'w0rp/ale'
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+depends = 'deoplete.nvim'
+hook_source = '''
+
+if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
+endif
+let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
+
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+let g:vimtex_view_general_options_latexmk = '--unique'
+let g:vimtex_compiler_latexmk = {
+      \ 'background' : 0,
+      \ 'build_dir': '',
+      \ 'continuous' : 1,
+      \ 'options' : [
+      \   '-pdfdvi',
+      \   '-verbose',
+      \   '-file-line-error',
+      \   '-synctex=1',
+      \   '-interaction=nonstopmode',
+      \ ]}
+let g:vimtex_compiler_progname = 'nvr'
+let g:vimtex_complete_enabled = 1
+'''
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+on_ft = ['vim', 'haskell', 'toml', 'tex', 'plaintex']
+hook_source = '''
+let g:deoplete#enable_at_startup = 1
+source ~/.vim/rc/plugins/deoplete.rc.vim
+'''
+[[plugins]]
+repo = 'Valloric/YouCompleteMe'
+on_ft = ['c', 'cpp', 'cs', 'python', 'go', 'javascript', 'typescript', 'rust']
+hook_source = '''
+let g:ycm_global_ycm_extra_conf = '~/.vim/repos/github.com/Valloric/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_python_binary_path = '/usr/bin/python3'
+'''
+
