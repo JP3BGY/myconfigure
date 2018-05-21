@@ -1,3 +1,5 @@
+set splitright
+set splitbelow
 set number
 set enc=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis

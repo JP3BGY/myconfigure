@@ -271,6 +271,12 @@ repo  =  'thinca/vim-quickrun'
 on_cmd  =  ['QuickRun',  'QR']
 hook_source  =  '''
 command QR QuickRun
+"let g:quickrun_config = {
+"\    "_":{
+"\    "runner":"terminal", 
+"\    "runner/terminal/opener":"vsplit"
+"\    }
+"\}
 '''
 
 [[plugins]]
@@ -304,17 +310,6 @@ on_event = 'InsertEnter'
 [[plugins]]
 repo = 'rdnetto/YCM-Generator'
 on_cmd = ['YcmGenerateConfig', 'CCGenerateConfig']
-
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
-depends = 'deoplete.nvim'
-on_ft = ['python', 'python3', 'python2']
-hook_source = '''
-let g:deoplete#sources#jedi#show_docstring = 1
-'''
-
-[[plugins]]
-repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'lervag/vimtex'
@@ -354,7 +349,7 @@ source ~/.vim/rc/plugins/deoplete.rc.vim
 '''
 [[plugins]]
 repo = 'Valloric/YouCompleteMe'
-on_ft = ['c', 'cpp', 'cs', 'python', 'go', 'javascript', 'typescript', 'rust']
+on_ft = ['c', 'cpp', 'cs', 'python', 'python3', 'go', 'javascript', 'typescript', 'rust']
 hook_source = '''
 let g:ycm_global_ycm_extra_conf = '~/.vim/repos/github.com/Valloric/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_python_binary_path = '/usr/bin/python3'

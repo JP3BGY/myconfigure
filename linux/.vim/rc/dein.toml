@@ -9,6 +9,10 @@ repo = 'itchyny/landscape.vim'
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
+hook_source='''
+set background=dark
+colorscheme hybrid
+'''
 
 [[plugins]]
 repo = 'itchyny/vim-haskell-indent'
@@ -51,4 +55,7 @@ repo = 'thinca/vim-themis'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
+
+[[plugins]]
+repo = 'w0rp/ale'
 
