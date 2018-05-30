@@ -6,20 +6,6 @@ repo = 'osyo-manga/vim-precious'
 on_source = 'context_filetype.vim'
 
 [[plugins]]
-repo = 'Shougo/neosnippet.vim'
-depends = ['neosnippet-snippets', 'context_filetype.vim']
-on_event = 'InsertCharPre'
-hook_source = '''
-  imap <silent><C-l>     <Plug>(neosnippet_jump_or_expand)
-  smap <silent><C-l>     <Plug>(neosnippet_jump_or_expand)
-  xmap <silent><C-l>     <Plug>(neosnippet_expand_target)
-  let g:neosnippet#enable_snipmate_compatibility = 1
-  let g:neosnippet#enable_completed_snippet = 1
-  " let g:snippets_dir = '~/.vim/snippets/,~/.vim/bundle/snipmate/snippets/'
-  let g:neosnippet#snippets_directory = '~/.vim/neosnippets'
-'''
-
-[[plugins]]
 repo = 'Shougo/neomru.vim'
 
 [[plugins]]
@@ -117,7 +103,7 @@ on_source = 'neocomplete.vim'
 
 [[plugins]]
 repo = 'Shougo/neco-syntax'
-on_source = ['neocomplete.vim']
+on_source = ['neocomplete.vim','deoplete.nvim']
 
 [[plugins]]
 repo = 'Shougo/vinarise.vim'
@@ -176,32 +162,6 @@ repo = 'tyru/open-browser.vim'
 
 [[plugins]]
 repo = 'osyo-manga/vim-brightest'
-
-[[plugins]]
-repo = 'kana/vim-smartchr'
-on_event = 'InsertCharPre'
-hook_source = '''
-  inoremap <expr> , smartchr#one_of(', ', ',')
-  inoremap <expr> =
-        \ search('\(&\<bar><bar>\<bar>+\<bar>-\<bar>/\<bar>>\<bar><\) \%#', 'bcn')? '<bs>= '
-        \ : search('\(*\<bar>!\)\%#', 'bcn') ? '= '
-        \ : smartchr#one_of(' = ', '=', ' == ')
-  augroup MyAutoCmd
-    " Substitute .. into -> .
-    autocmd FileType c,cpp inoremap <buffer> <expr> .
-          \ smartchr#loop('.', '->', '...')
-    autocmd FileType vim inoremap <buffer> <expr> .
-          \ smartchr#loop('.', ' . ', '..', '...')
-    autocmd FileType lisp,scheme,clojure inoremap <buffer> <expr> = =
-    autocmd FileType haskell,int-ghci
-          \ inoremap <buffer> <expr> + smartchr#loop('+', ' ++ ')
-          \| inoremap <buffer> <expr> - smartchr#loop('-', ' -> ', ' <- ')
-          \| inoremap <buffer> <expr> $ smartchr#loop(' $ ', '$')
-          \| inoremap <buffer> <expr> \ smartchr#loop('\ ', '\')
-          \| inoremap <buffer> <expr> : smartchr#loop(':', ' :: ', ' : ')
-          \| inoremap <buffer> <expr> . smartchr#loop('.', ' . ', '..')
-  augroup END
-'''
 
 [[plugins]]
 repo = 'tweekmonster/impsort.vim'
@@ -353,5 +313,48 @@ on_ft = ['c', 'cpp', 'cs', 'python', 'python3', 'go', 'javascript', 'typescript'
 hook_source = '''
 let g:ycm_global_ycm_extra_conf = '~/.vim/repos/github.com/Valloric/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycm_autoclose_preview_window_after_completion=1
+'''
+
+[[plugins]]
+repo = 'kana/vim-smartchr'
+on_ft=['python','python3']
+hook_source = '''
+augroup MyAutoCmd
+    " Substitute .. into -> .
+    autocmd FileType c,cpp inoremap <buffer> <expr> .
+    \ smartchr#loop('.', '->', '...')
+    autocmd FileType vim inoremap <buffer> <expr> .
+    \ smartchr#loop('.', ' . ', '..', '...')
+    autocmd FileType lisp,scheme,clojure inoremap <buffer> <expr> = =
+    autocmd FileType haskell,int-ghci
+    \  inoremap <buffer> <expr> + smartchr#loop('+', ' ++ ')
+    \| inoremap <buffer> <expr> - smartchr#loop('-', ' -> ', ' <- ')
+    \| inoremap <buffer> <expr> $ smartchr#loop(' $ ', '$')
+    \| inoremap <buffer> <expr> \ smartchr#loop('\ ', '\')
+    \| inoremap <buffer> <expr> : smartchr#loop(':', ' :: ', ' : ')
+    \| inoremap <buffer> <expr> . smartchr#loop('.', ' . ', '..')
+    autocmd FileType c,cpp,vim,lisp,scheme,clojure,haskell,int-ghci,rust,python,python3,py3,py 
+    \inoremap <expr> , smartchr#one_of(', ', ',')
+    \|inoremap <expr> =
+    \ search('\(&\<bar><bar>\<bar>+\<bar>-\<bar>/\<bar>>\<bar><\) \%#', 'bcn')? '<bs>= '
+    \ : search('\(*\<bar>!\)\%#', 'bcn') ? '= '
+    \ : smartchr#one_of(' = ', '=', ' == ')
+augroup END
+'''
+
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets', 'context_filetype.vim']
+on_source=['neocomplete.vim','deoplete.nvim','YouCompleteMe']
+hook_source = '''
+  imap <silent><C-l>     <Plug>(neosnippet_jump_or_expand)
+  smap <silent><C-l>     <Plug>(neosnippet_jump_or_expand)
+  xmap <silent><C-l>     <Plug>(neosnippet_expand_target)
+  let g:neosnippet#enable_snipmate_compatibility = 1
+  let g:neosnippet#enable_completed_snippet = 1
+  " let g:snippets_dir = '~/.vim/snippets/,~/.vim/bundle/snipmate/snippets/'
+  let g:neosnippet#snippets_directory = '~/.vim/neosnippets'
 '''
 
