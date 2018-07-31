@@ -10,6 +10,7 @@ colors
 alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -al'
+alias upd_zsh='export PATH=$PATH'
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
@@ -35,7 +36,7 @@ RPROMPT='[%F{green}%d%f]'
 # End of lines added by compinstall
 JAVA_HOME="/etc/alternatives/java_sdk/"
 
-PATH=:~/.local/bin:~/cdtdebugger:$PATH:
+PATH=~/.cargo/bin:~/.local/bin:~/cdtdebugger:$PATH:
 export PATH
 export JAVA_HOME
 setopt nonomatch
@@ -47,6 +48,7 @@ alias ipy=ipython
 alias ipy2=ipython2
 alias ipy3=ipython3
 alias msbuild="dotnet build"
+alias zshup="export PATH=\$PATH"
 export XDG_CONFIG_HOME=~/.config
 export PATH=~/node/bin/:$PATH:
 eval "$(stack --bash-completion-script stack)"
