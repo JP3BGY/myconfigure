@@ -55,3 +55,6 @@ repo = 'thinca/vim-themis'
 
 [[plugins]]
 repo = 'w0rp/ale'
+
+[[plugins]]
+repo = 'ujihisa/neco-look'

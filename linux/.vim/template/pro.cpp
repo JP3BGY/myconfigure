@@ -9,8 +9,23 @@
 
 using namespace std;
 typedef long long ll;
+typedef unsigned long long ull;
+typedef unsigned int uint;
 typedef pair<int, int> pi;
 typedef vector<int> vi;
+void print_pair(pi a){
+  cerr<<"("<<a.first<<", "<<a.second<<") ";
+}
+template<int T1, int T2>
+void print_2d(int a[T1][T2], int x, int y){
+  For(i, x){
+    For(j, y){
+      cerr<<a[i][j]<<" ";
+    }
+    cerr<<endl;
+  }
+}
+
 
 
 int main(){

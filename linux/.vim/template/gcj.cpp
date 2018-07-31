@@ -15,6 +15,18 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> pi;
 typedef vector<int> vi;
+void print_pair(pi a){
+  cerr<<"("<<a.first<<", "<<a.second<<") ";
+}
+template<int T1, int T2>
+void print_2d(int a[T1][T2], int x, int y){
+  For(i, x){
+    For(j, y){
+      cerr<<a[i][j]<<" ";
+    }
+    cerr<<endl;
+  }
+}
 
 const char *IMP = "IMPOSSIBLE";
 const char *POS = "POSSIBLE";
@@ -26,13 +38,13 @@ int main(){
   For(time, times){
     
 answer:
-    printf("Case %d: %d\n", time, ans);
+    printf("Case #%d: %d\n", time+1, ans);
     continue;
 possible:
-    printf("Case %d: %s\n", time, POS);
+    printf("Case #%d: %s\n", time+1, POS);
     continue;
 impossible:
-    printf("Case %d: %s\n", time, IMP);
+    printf("Case #%d: %s\n", time+1, IMP);
     continue;
   }
   return 0;

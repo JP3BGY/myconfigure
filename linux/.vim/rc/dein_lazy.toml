@@ -276,7 +276,6 @@ repo = 'lervag/vimtex'
 on_ft = ['tex']
 depends = 'deoplete.nvim'
 hook_source = '''
-
 if !exists('g:deoplete#omni#input_patterns')
     let g:deoplete#omni#input_patterns = {}
 endif
@@ -296,13 +295,30 @@ let g:vimtex_compiler_latexmk = {
       \   '-synctex=1',
       \   '-interaction=nonstopmode',
       \ ]}
+let g:vimtex_compiler_latexmk_engines = {
+      \ '_'                : '-pdfdvi',
+      \ 'uplaex'           : '-pdfdvi',
+      \ 'pdflatex'         : '-pdf',
+      \ 'lualatex'         : '-lualatex',
+      \ 'xelatex'          : '-xelatex',
+      \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
+      \ 'context (luatex)' : '-pdf -pdflatex=context',
+      \ 'context (xetex)'  : '-pdf -pdflatex="texexec --xtx"',
+      \}
+let g:vimtex_compiler_latexrun_engines = {
+      \ '_'                : 'uplatex',
+      \ 'pdflatex'         : 'pdflatex',
+      \ 'lualatex'         : 'lualatex',
+      \ 'xelatex'          : 'xelatex',
+      \}
+
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_complete_enabled = 1
 '''
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
-on_ft = ['vim', 'haskell', 'toml', 'tex', 'plaintex']
+on_ft = ['vim', 'haskell', 'toml', 'tex', 'plaintex','text','']
 hook_source = '''
 let g:deoplete#enable_at_startup = 1
 source ~/.vim/rc/plugins/deoplete.rc.vim
