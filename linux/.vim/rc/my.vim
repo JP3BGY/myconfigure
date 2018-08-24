@@ -12,5 +12,6 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set laststatus=2
+set foldmethod=indent
 syntax on
 tnoremap <Esc> <C-\><C-n>
