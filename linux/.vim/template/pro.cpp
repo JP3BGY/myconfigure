@@ -25,6 +25,12 @@ void print_2d(int a[T1][T2], int x, int y){
     cerr<<endl;
   }
 }
+template<class T>
+void print_array(T a[],size_t n){
+  cerr<<"array:";
+  REP(n-1)cerr<<a[i]<<",";
+  cerr<<a[n-1]<<endl;
+}
 
 
 
