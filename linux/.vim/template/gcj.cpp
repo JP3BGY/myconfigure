@@ -5,29 +5,39 @@
 #define REV(i, a, b) for(int i = b-1;i >= a;i--)
 #define Rev(i, a) REV(i, 0, a)
 #define REP(a) For(i, a)
-#ifdef DEBUG
-#define DEBUG_PRINT(...) printf(__VA_ARGS__)
+#ifdef ENABLE_DEBUG
+#define dump(x) cerr<<#x"="<<x<<endl;
+#define dumparr(x,n) cerr<<#x"["<<n<<"]="<<x[n]<<endl;
+#define DEBUG_PRINT(...) fprintf(stderr, __VA_ARGS__)
 #else
-#define DEBUG_PRINT(...)
+#define dump(x)
+#define dumparr(x,n)
+#define DEBUG_PRINT(...) 
 #endif
 
 using namespace std;
 typedef long long ll;
-typedef pair<int, int> pi;
-typedef vector<int> vi;
-void print_pair(pi a){
+typedef unsigned long long ull;
+typedef unsigned int uint;
+typedef pair<ll, ll> pll;
+typedef vector<ll> vll;
+void print_pair(pll a){
   cerr<<"("<<a.first<<", "<<a.second<<") ";
 }
-template<int T1, int T2>
-void print_2d(int a[T1][T2], int x, int y){
-  For(i, x){
-    For(j, y){
-      cerr<<a[i][j]<<" ";
-    }
-    cerr<<endl;
-  }
+template<class S,class T>
+std::ostream& operator<<(std::ostream& os,pair<S,T> a){
+  os << "(" << a.first << "," << a.second << ")";
+  return os;
 }
-
+template<class T>
+std::ostream& operator<<(std::ostream& os,vector<T> a){
+  os << "[ ";
+  REP(a.size()){
+    os<< a[i] << " ";
+  }
+  os<< " ]";
+  return os;
+}
 const char *IMP = "IMPOSSIBLE";
 const char *POS = "POSSIBLE";
 

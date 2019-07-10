@@ -5,4 +5,5 @@ augroup load_templates
     autocmd BufNewFile *.pro.cpp execute s:load_templates_command."pro.cpp"
     autocmd BufNewFile *.gcj.cpp execute s:load_templates_command."gcj.cpp"
     autocmd BufNewFile *.ltx execute s:load_templates_command."up.ltx"
+    autocmd BufNewFile ans.py execute s:load_templates_command."ans.py"
 augroup END

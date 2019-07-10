@@ -6,13 +6,6 @@ on_if = '!has("nvim")'
 on_ft = ['c', 'cpp', 'objc', 'objcpp']
 
 [[plugins]]
-repo = 'Shougo/vimshell.vim'
-on_cmd = ['VimShell', 'VS']
-hook_source = '''
-command VS VimShell
-'''
-
-[[plugins]]
 repo = 'Shougo/neocomplete.vim'
 depends = 'context_filetype.vim'
 if = "has('lua')"

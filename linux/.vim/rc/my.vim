@@ -15,3 +15,4 @@ set laststatus=2
 set foldmethod=indent
 syntax on
 tnoremap <Esc> <C-\><C-n>
+let loaded_matchparen=1

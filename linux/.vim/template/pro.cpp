@@ -1,38 +1,43 @@
 #include <bits/stdc++.h>
 
-#define FOR(i, a, b) for(int i = a;i < b;i++)
+#define FOR(i, a, b) for(long i = (long)a;i < (long)b;i++)
 #define For(i, a) FOR(i, 0, a)
-#define REV(i, a, b) for(int i = b-1;i >= a;i--)
+#define REV(i, a, b) for(long i = (long)b-1;i >= (long)a;i--)
 #define Rev(i, a) REV(i, 0, a)
 #define REP(a) For(i, a)
+#ifdef ENABLE_DEBUG
+#define dump(x) cerr<<#x"="<<x<<endl;
+#define dumparr(x,n) cerr<<#x"["<<n<<"]="<<x[n]<<endl;
 #define DEBUG_PRINT(...) fprintf(stderr, __VA_ARGS__)
+#else
+#define dump(x)
+#define dumparr(x,n)
+#define DEBUG_PRINT(...) 
+#endif
 
 using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef unsigned int uint;
-typedef pair<int, int> pi;
-typedef vector<int> vi;
-void print_pair(pi a){
+typedef pair<ll, ll> pll;
+typedef vector<ll> vll;
+void print_pair(pll a){
   cerr<<"("<<a.first<<", "<<a.second<<") ";
 }
-template<int T1, int T2>
-void print_2d(int a[T1][T2], int x, int y){
-  For(i, x){
-    For(j, y){
-      cerr<<a[i][j]<<" ";
-    }
-    cerr<<endl;
-  }
+template<class S,class T>
+std::ostream& operator<<(std::ostream& os,pair<S,T> a){
+  os << "(" << a.first << "," << a.second << ")";
+  return os;
 }
 template<class T>
-void print_array(T a[],size_t n){
-  cerr<<"array:";
-  REP(n-1)cerr<<a[i]<<",";
-  cerr<<a[n-1]<<endl;
+std::ostream& operator<<(std::ostream& os,vector<T> a){
+  os << "[ ";
+  REP(a.size()){
+    os<< a[i] << " ";
+  }
+  os<< " ]";
+  return os;
 }
-
-
 
 int main(){
   return 0;

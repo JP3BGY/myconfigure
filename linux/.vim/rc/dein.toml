@@ -36,9 +36,6 @@ repo = 'elzr/vim-json'
 repo = 'hynek/vim-python-pep8-indent'
 
 [[plugins]]
-repo = 'kana/vim-operator-user'
-
-[[plugins]]
 repo = 'rcmdnk/vim-markdown'
 
 [[plugins]]
@@ -53,12 +50,31 @@ repo = 'hail2u/vim-css3-syntax'
 [[plugins]]
 repo = 'thinca/vim-themis'
 
-[[plugins]]
-repo = 'w0rp/ale'
-hook_source = '''
-let g:ale_lint_on_save=1
-let g:ale_lint_on_text_changed='normal'
-'''
 
 [[plugins]]
 repo = 'ujihisa/neco-look'
+[[plugins]]
+repo = 'fuenor/im_control.vim'
+hook_add='''
+let IM_CtrlMode=1
+inoremap <silent> <C-j> <C-r>=IMState('FixMode')<CR>
+function! IMCtrl(cmd)
+    let cmd=a:cmd
+    if cmd=='On'
+        let res=system('ibus engine "mozc-jp"')
+    elseif cmd=='Off'
+        let res=system('ibus engine "xkb:jp::jpn"')
+    endif
+    return ''
+endfunction
+set timeout timeoutlen=3000 ttimeoutlen=100
+'''
+[[plugins]]
+repo = 'morhetz/gruvbox'
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+let g:ale_lint_on_save=1
+let g:ale_lint_on_text_changed='normal'
+'''
