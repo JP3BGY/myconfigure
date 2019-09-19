@@ -144,7 +144,7 @@ on_ft  =  ['haskell']
 
 [[plugins]]
 repo = 'lervag/vimtex'
-on_ft = ['tex']
+on_ft = ['tex','plaintex']
 depends = 'deoplete.nvim'
 hook_source = '''
 if !exists('g:deoplete#omni#input_patterns')
